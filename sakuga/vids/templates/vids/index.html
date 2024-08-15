@@ -1,0 +1,11 @@
+{% extends "vids/base/base.html" %}
+
+{% block title %}Random Sakuga{% endblock %}
+
+{% block body %}
+<a href="{{ postUrl }}">Post Url</a>
+<p>Tags: {{ tags }} <br></p>
+<video controls id="vid">
+  <source src="{{ videoUrl }}" type="video/mp4">
+</video>
+{% endblock %}
