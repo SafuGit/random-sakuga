@@ -3,22 +3,35 @@
 {% block title %}Random Sakuga{% endblock %}
 
 {% block body %}
-<a href="{{ postUrl }}">Post Url</a>
-<p>Tags: <span class='badge text-bg-secondary'>{{ tags }}</span> </p>
 
 <video autoplay controls onended="reload()" id="vid" class='col-10 w-100'>
   <source src="{{ videoUrl }}" type="video/mp4">
 </video>
 
-{% comment %} <audio autoplay loop controls class="w-100">
-  <source src="{{ song }}" type="audio/mp3">
-</audio> {% endcomment %}
+<p>Tags: <span class='badge text-bg-secondary'>{{ tags }}</span> </p>
+<button class='btn btn-primary' onclick='play_audio()'>Play Audio</button>
+<button class='btn btn-primary' onclick='stop_audio()'>Stop Audio</button>
+<button class='btn btn-primary' onclick='reload()'>Play Next Video</button>
+<a class='btn btn-primary' href="{{ song }}" role='button'>Play in Background</a>
+<a class='btn btn-primary' href="{{ postUrl }}" role='button'>View Original Post</a>
 
-<iframe title='audio' height="0" width="0" allow="autoplay" src="{{ song }}"></iframe>
+<audio autoplay class="w-100" id='aud'>
+  <source src="{{ song }}" type="audio/mp3">
+</audio> 
 
 <script type='text/javascript'>
   function reload() {
     location.reload();
+  }
+
+  function play_audio() {
+    var aud = document.getElementById('aud');
+    aud.play();
+  }
+
+  function stop_audio() {
+    var aud = document.getElementById('aud');
+    aud.pause();
   }
 </script>
 {% endblock %}
