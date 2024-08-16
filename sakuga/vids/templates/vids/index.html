@@ -8,12 +8,14 @@
   <source src="{{ videoUrl }}" type="video/mp4">
 </video>
 
-<p>Tags: <span class='badge text-bg-secondary'>{{ tags }}</span> </p>
-<button class='btn btn-primary' onclick='play_audio()'>Play Audio</button>
-<button class='btn btn-primary' onclick='stop_audio()'>Stop Audio</button>
-<button class='btn btn-primary' onclick='reload()'>Play Next Video</button>
-<a class='btn btn-primary' href="{{ song }}" role='button'>Play in Background</a>
-<a class='btn btn-primary' href="{{ postUrl }}" role='button'>View Original Post</a>
+<div>
+  <p>Tags: <span class='badge text-bg-secondary'>{{ tags }}</span> </p>
+  <button class='btn btn-primary' onclick='play_audio()'>Play Audio</button>
+  <button class='btn btn-primary' onclick='stop_audio()'>Stop Audio</button>
+  <button class='btn btn-primary' onclick='reload()'>Play Next Video</button>
+  <a class='btn btn-primary' href="{{ song }}" role='button'>Play in Background</a>
+  <a class='btn btn-primary' href="{{ postUrl }}" role='button'>View Original Post</a>
+</div>
 
 <audio autoplay class="w-100" id='aud'>
   <source src="{{ song }}" type="audio/mp3">
