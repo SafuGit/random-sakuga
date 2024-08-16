@@ -3,7 +3,7 @@
 [![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)](https://www.djangoproject.com/)
 
 A website where you can continously watch Anime Sakuga and Anisong goodness.
-
+https://random-sakuga-iota.vercel.app/
 
 
 ## FAQ
