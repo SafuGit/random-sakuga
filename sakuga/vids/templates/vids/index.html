@@ -4,8 +4,21 @@
 
 {% block body %}
 <a href="{{ postUrl }}">Post Url</a>
-<p>Tags: {{ tags }} <br></p>
-<video controls id="vid">
+<p>Tags: <span class='badge text-bg-secondary'>{{ tags }}</span> </p>
+
+<video autoplay controls onended="reload()" id="vid" class='col-10 w-100'>
   <source src="{{ videoUrl }}" type="video/mp4">
 </video>
+
+{% comment %} <audio autoplay loop controls class="w-100">
+  <source src="{{ song }}" type="audio/mp3">
+</audio> {% endcomment %}
+
+<iframe title='audio' height="0" width="0" allow="autoplay" src="{{ song }}"></iframe>
+
+<script type='text/javascript'>
+  function reload() {
+    location.reload();
+  }
+</script>
 {% endblock %}
