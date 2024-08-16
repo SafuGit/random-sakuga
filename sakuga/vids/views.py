@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from pybooru import Moebooru
 import random
-from django.http import Http404
 import requests
 import bs4
 from django.shortcuts import redirect
@@ -40,7 +39,7 @@ def filetypechecker(boorurl):
                 else:
                     return False
     except:
-        raise Http404()
+        return redirect('/')
 
 def animegrabber(posturl):
     r = requests.get(posturl,headers=header)
@@ -56,10 +55,13 @@ def animegrabber(posturl):
     return animestr
 
 def song_playlist():
-    response = requests.get('https://api.npoint.io/88d75817ad9cb6835de3')
-    data = response.json()
-    random_num = random.randint(0, 80)
-    return data[random_num]['audio']
+    try:
+        response = requests.get('https://api.npoint.io/88d75817ad9cb6835de3')
+        data = response.json()
+        random_num = random.randint(0, 80)
+        return data[random_num]['audio']
+    except:
+        return redirect('/')
 
 def index(request):
     try:
