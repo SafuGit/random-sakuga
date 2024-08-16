@@ -16,5 +16,6 @@ Sakuga is a term for scenes in an anime that pay special attention to the drawin
 
 ## Screenshots
 
+![image](https://github.com/user-attachments/assets/e24260e0-e48e-460f-82d8-1a705c869802)
 
 
